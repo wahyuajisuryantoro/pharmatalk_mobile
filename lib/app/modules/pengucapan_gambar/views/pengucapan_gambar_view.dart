@@ -83,23 +83,20 @@ class PengucapanGambarView extends GetView<PengucapanGambarController> {
               onTap: () => controller.speak(controller.currentIndex.value),
               child: Center(
                 child: Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 16, vertical: 8), // Padding dalam rectangle
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   decoration: BoxDecoration(
-                    color: AppColors.skyBlue, // Background sky blue
-                    borderRadius: BorderRadius.circular(8), // Border radius
-                    border: Border.all(
-                        color: AppColors.skyBlue), // Border warna sky blue
+                    color: AppColors.skyBlue,
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: AppColors.skyBlue),
                   ),
                   child: Row(
-                    mainAxisSize: MainAxisSize
-                        .min, // Menjaga ukuran rectangle sesuai konten
+                    mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         "${controller.currentIndex.value + 1}. ${controller.titles[controller.currentIndex.value]}",
-                        style: AppText.mediumTextBold(
-                            color: Colors.white), // Teks putih
+                        style: AppText.mediumTextBold(color: Colors.white),
                       ),
                       const SizedBox(width: 8),
                       Obx(() => controller.isLoading.value
@@ -108,12 +105,12 @@ class PengucapanGambarView extends GetView<PengucapanGambarController> {
                               height: 24,
                               child: CircularProgressIndicator(
                                 strokeWidth: 2,
-                                color: Colors.white, // Loading spinner putih
+                                color: Colors.white,
                               ),
                             )
                           : const Icon(
                               Icons.volume_up,
-                              color: Colors.white, // Ikon putih
+                              color: Colors.white,
                             )),
                     ],
                   ),
@@ -136,7 +133,8 @@ class PengucapanGambarView extends GetView<PengucapanGambarController> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: Image.asset(
-                            controller.materiImages[controller.currentIndex.value],
+                            controller
+                                .materiImages[controller.currentIndex.value],
                             fit: BoxFit.contain,
                           ),
                         ),

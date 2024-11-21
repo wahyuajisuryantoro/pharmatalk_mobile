@@ -34,7 +34,7 @@ class PengucapanGambarController extends GetxController {
       await flutterTts.setVolume(1.0);
       await flutterTts.setPitch(1.0);
       
-      // Tambahkan handler untuk iOS
+      
       await flutterTts.setSharedInstance(true);
       await flutterTts.setIosAudioCategory(
         IosTextToSpeechAudioCategory.ambient,
@@ -52,7 +52,7 @@ class PengucapanGambarController extends GetxController {
   Future<void> speak(int index) async {
     try {
       isLoading.value = true;
-      await flutterTts.stop(); // Stop any ongoing speech
+      await flutterTts.stop(); 
       await flutterTts.speak(titles[index]);
     } catch (e) {
       print("Error speaking: $e");

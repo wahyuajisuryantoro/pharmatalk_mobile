@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
 
-
 class LoginController extends GetxController {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
@@ -40,9 +39,11 @@ class LoginController extends GetxController {
 
         if (response.statusCode == 200) {
           final responseData = jsonDecode(response.body);
-          final storage = GetStorage();
-          storage.write('id_user', responseData['id_user']);
-          storage.write('token', responseData['token']);
+          final userData = responseData['user'];
+
+          // Simpan data user di GetStorage
+          storage.write('user_data', userData);
+          storage.write('token', responseData['access_token']);
           Get.offAllNamed(Routes.HOME);
         } else if (response.statusCode == 401) {
           errorMessagePassword.value = 'Incorrect password.';

@@ -68,9 +68,16 @@ class AppText {
 
   static TextStyle largeTextBold({Color? color}) => GoogleFonts.lexend(
         fontSize: 21,
-        fontWeight: FontWeight.w700, // Medium
+        fontWeight: FontWeight.w700, 
         color: color,
       );
+
+      static TextStyle extraLargeTextBold({Color? color}) => GoogleFonts.lexend(
+        fontSize: 24,
+        fontWeight: FontWeight.w700, 
+        color: color,
+      );
+
 
   static TextStyle largeTextRegular({Color? color}) => GoogleFonts.lexend(
         fontSize: 16,

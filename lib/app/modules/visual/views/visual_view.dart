@@ -1,5 +1,6 @@
 import 'package:bahasaku/app/routes/app_pages.dart';
-import 'package:bahasaku/components/global_header.dart';
+import 'package:bahasaku/components/global_bottom_navbar/global_bottomnavigationbar_view.dart';
+import 'package:bahasaku/components/global_header/global_header_view.dart';
 import 'package:bahasaku/utils/app_colors.dart';
 import 'package:bahasaku/utils/app_responsive.dart';
 import 'package:bahasaku/utils/app_text.dart';
@@ -18,17 +19,11 @@ class VisualView extends GetView<VisualController> {
       body: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // Header
-          const GlobalHeader(),
-
-          // Spacing
+          GlobalHeader(),
           SizedBox(height: AppResponsive.height(context, 4)),
-
-          // Augmented Reality Navigation Card
           GestureDetector(
             onTap: () {
-              // Navigasi ke halaman Routes.AUGMENTEDREALITY
-              // Get.toNamed(Routes.AUGMENTED_REALITY);
+              Get.toNamed(Routes.MATERI_AR);
             },
             child: Container(
               margin: EdgeInsets.symmetric(
@@ -48,7 +43,6 @@ class VisualView extends GetView<VisualController> {
               ),
               child: Row(
                 children: [
-                  // Icon Circle
                   Container(
                     height: AppResponsive.height(context, 6),
                     width: AppResponsive.height(context, 6),
@@ -58,7 +52,7 @@ class VisualView extends GetView<VisualController> {
                     ),
                     child: Center(
                       child: SvgPicture.asset(
-                        'assets/icons/ar.svg', // Path ke icon AR
+                        'assets/icons/ar.svg',
                         height: AppResponsive.height(context, 3),
                         width: AppResponsive.height(context, 3),
                         color: AppColors.white,
@@ -66,8 +60,6 @@ class VisualView extends GetView<VisualController> {
                     ),
                   ),
                   SizedBox(width: AppResponsive.width(context, 4)),
-
-                  // Text Content
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -92,6 +84,7 @@ class VisualView extends GetView<VisualController> {
           ),
         ],
       ),
+      bottomNavigationBar: BottomNavigationBarView(),
     );
   }
 }

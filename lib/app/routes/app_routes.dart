@@ -13,6 +13,13 @@ abstract class Routes {
   static const GAMBARPENGUCAPAN = _Paths.GAMBARPENGUCAPAN;
   static const PENGUCAPAN_GAMBAR = _Paths.PENGUCAPAN_GAMBAR;
   static const PENGUCAPAN_PENJELASAN = _Paths.PENGUCAPAN_PENJELASAN;
+  static const LATIHAN = _Paths.LATIHAN;
+  static const LATIHAN_MATCH_TEXT = _Paths.LATIHAN_MATCH_TEXT;
+  static const MATERI_AR = _Paths.MATERI_AR;
+  static const STARTER = _Paths.STARTER;
+  static const SPLASHSCREEN = _Paths.SPLASHSCREEN;
+  static const TENTANG = _Paths.TENTANG;
+  static const RIWAYAT = _Paths.RIWAYAT;
 }
 
 abstract class _Paths {
@@ -27,4 +34,11 @@ abstract class _Paths {
   static const GAMBARPENGUCAPAN = '/gambarpengucapan';
   static const PENGUCAPAN_GAMBAR = '/pengucapan-gambar';
   static const PENGUCAPAN_PENJELASAN = '/pengucapan-penjelasan';
+  static const LATIHAN = '/latihan';
+  static const LATIHAN_MATCH_TEXT = '/latihan-match-text';
+  static const MATERI_AR = '/materi-ar';
+  static const STARTER = '/starter';
+  static const SPLASHSCREEN = '/splashscreen';
+  static const TENTANG = '/tentang';
+  static const RIWAYAT = '/riwayat';
 }

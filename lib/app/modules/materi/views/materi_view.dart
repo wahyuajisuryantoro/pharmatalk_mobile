@@ -1,5 +1,5 @@
 import 'package:bahasaku/app/routes/app_pages.dart';
-import 'package:bahasaku/components/global_header.dart';
+import 'package:bahasaku/components/global_header/global_header_view.dart';
 import 'package:bahasaku/utils/app_colors.dart';
 import 'package:bahasaku/utils/app_responsive.dart';
 import 'package:bahasaku/utils/app_text.dart';
@@ -19,7 +19,7 @@ class MateriView extends GetView<MateriController> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const GlobalHeader(),
+            GlobalHeader(),
             SizedBox(height: AppResponsive.height(context, 4)),
             GestureDetector(
               onTap: () {
@@ -84,7 +84,9 @@ class MateriView extends GetView<MateriController> {
             ),
             SizedBox(height: AppResponsive.height(context, 4)),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(Routes.MATERI_AR);
+              },
               child: Container(
                 margin: EdgeInsets.symmetric(
                   horizontal: AppResponsive.width(context, 5),

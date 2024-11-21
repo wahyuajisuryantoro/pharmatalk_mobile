@@ -17,7 +17,6 @@ class RegisterController extends GetxController {
   final isPasswordVisible = true.obs;
   final isRegistering = false.obs;
 
-
   final ageController = TextEditingController();
   final nameController = TextEditingController();
   final usernameController = TextEditingController();
@@ -113,61 +112,57 @@ class RegisterController extends GetxController {
     }
   }
 
-  
-
-
   Future<void> registerUser() async {
-  const String url = "https://pharmatalk.com.presensimu.com/api/register";
-  
-  try {
-    isRegistering.value = true;
-    final response = await http.post(
-      Uri.parse(url),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: jsonEncode({
-        'name': nameController.text,
-        'username': usernameController.text,
-        'age': int.tryParse(ageController.text),
-        'email': emailController.text,
-        'password': passwordController.text,
-      }),
-    );
-    isRegistering.value = false;
+    const String url = "https://pharmatalk.com.presensimu.com/api/register";
 
-    if (response.statusCode == 201) {
-      final data = jsonDecode(response.body);
-      Get.snackbar(
-        'Success',
-        'Registration successful!',
-        snackPosition: SnackPosition.TOP,
-        backgroundColor: Colors.green.withOpacity(0.1),
-        colorText: Colors.green,
+    try {
+      isRegistering.value = true;
+      final response = await http.post(
+        Uri.parse(url),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: jsonEncode({
+          'name': nameController.text,
+          'username': usernameController.text,
+          'age': int.tryParse(ageController.text),
+          'email': emailController.text,
+          'password': passwordController.text,
+        }),
       );
-      Get.offAllNamed(Routes.LOGIN);
-    } else {
-      final errorData = jsonDecode(response.body);
+      isRegistering.value = false;
+
+      if (response.statusCode == 201) {
+        final data = jsonDecode(response.body);
+        Get.snackbar(
+          'Success',
+          'Registration successful!',
+          snackPosition: SnackPosition.TOP,
+          backgroundColor: Colors.green.withOpacity(0.1),
+          colorText: Colors.green,
+        );
+        Get.offAllNamed(Routes.LOGIN);
+      } else {
+        final errorData = jsonDecode(response.body);
+        Get.snackbar(
+          'Error',
+          errorData['errors'].toString(),
+          snackPosition: SnackPosition.TOP,
+          backgroundColor: Colors.red.withOpacity(0.1),
+          colorText: Colors.red,
+        );
+      }
+    } catch (e) {
+      isRegistering.value = false;
       Get.snackbar(
         'Error',
-        errorData['errors'].toString(),
+        'Failed to connect to the server',
         snackPosition: SnackPosition.TOP,
         backgroundColor: Colors.red.withOpacity(0.1),
         colorText: Colors.red,
       );
     }
-  } catch (e) {
-    isRegistering.value = false;
-    Get.snackbar(
-      'Error',
-      'Failed to connect to the server',
-      snackPosition: SnackPosition.TOP,
-      backgroundColor: Colors.red.withOpacity(0.1),
-      colorText: Colors.red,
-    );
   }
-}
-
 
   @override
   void onClose() {

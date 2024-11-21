@@ -1,5 +1,6 @@
 import 'package:bahasaku/app/routes/app_pages.dart';
-import 'package:bahasaku/components/global_header.dart';
+import 'package:bahasaku/components/global_bottom_navbar/global_bottomnavigationbar_view.dart';
+import 'package:bahasaku/components/global_header/global_header_view.dart';
 import 'package:bahasaku/utils/app_colors.dart';
 import 'package:bahasaku/utils/app_responsive.dart';
 import 'package:bahasaku/utils/app_text.dart';
@@ -13,7 +14,6 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Data banner
     final List<Map<String, String>> banners = [
       {
         'logo': 'assets/images/logo_banner.png',
@@ -26,13 +26,8 @@ class HomeView extends StatelessWidget {
       backgroundColor: AppColors.white,
       body: Column(
         children: [
-          // Header Section
-          const GlobalHeader(),
-
-          // Spacing between header and content
+          GlobalHeader(),
           SizedBox(height: AppResponsive.height(context, 3)),
-
-          // Body Section
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -40,7 +35,6 @@ class HomeView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // News Section
                     Text(
                       'News',
                       style: AppText.largeTextBold(color: AppColors.charcoal),
@@ -61,15 +55,12 @@ class HomeView extends StatelessWidget {
                                   const EdgeInsets.symmetric(horizontal: 8.0),
                               child: Stack(
                                 children: [
-                                  // Background Decoration
                                   Container(
                                     decoration: BoxDecoration(
                                       color: AppColors.skyBlue,
                                       borderRadius: BorderRadius.circular(16),
                                     ),
                                   ),
-
-                                  // Circular Decoration
                                   Positioned(
                                     right: -AppResponsive.width(context, 10),
                                     bottom: -AppResponsive.height(context, 5),
@@ -83,13 +74,10 @@ class HomeView extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-
-                                  // Content
                                   Padding(
                                     padding: const EdgeInsets.all(16.0),
                                     child: Row(
                                       children: [
-                                        // Logo and Text
                                         Expanded(
                                           child: Column(
                                             crossAxisAlignment:
@@ -97,14 +85,12 @@ class HomeView extends StatelessWidget {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: [
-                                              // Logo
                                               Image.asset(
                                                 banner['logo']!,
                                                 height: AppResponsive.height(
                                                     context, 5),
                                               ),
                                               const SizedBox(height: 8),
-                                              // Title with Border and Background
                                               Container(
                                                 decoration: BoxDecoration(
                                                   color: Color(0xFFFCD188),
@@ -131,8 +117,6 @@ class HomeView extends StatelessWidget {
                                             ],
                                           ),
                                         ),
-
-                                        // News Image
                                         ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(12),
@@ -153,11 +137,7 @@ class HomeView extends StatelessWidget {
                         );
                       }).toList(),
                     ),
-
-                    // Spacing
                     SizedBox(height: AppResponsive.height(context, 3)),
-
-                    // Menu Section
                     Text(
                       'Menu',
                       style: AppText.largeTextBold(color: AppColors.charcoal),
@@ -201,7 +181,7 @@ class HomeView extends StatelessWidget {
                           iconPath: 'assets/icons/exercise.svg',
                           title: 'Latihan',
                           onTap: () {
-                            // Aksi untuk Latihan
+                            Get.toNamed(Routes.LATIHAN);
                           },
                         ),
                       ],
@@ -213,10 +193,10 @@ class HomeView extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: BottomNavigationBarView(),
     );
   }
 
-  // Helper untuk tombol menu
   Widget _buildMenuButton(BuildContext context,
       {required String iconPath,
       required String title,

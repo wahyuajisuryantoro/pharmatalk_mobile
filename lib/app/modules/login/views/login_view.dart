@@ -22,14 +22,11 @@ class LoginView extends GetView<LoginController> {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              
               Image.asset(
-                'assets/images/logo.png', 
+                'assets/images/logo.png',
                 height: AppResponsive.height(context, 35),
                 width: AppResponsive.width(context, 100),
               ),
-
-              
               Obx(
                 () => Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,8 +78,6 @@ class LoginView extends GetView<LoginController> {
                 ),
               ),
               SizedBox(height: AppResponsive.height(context, 2)),
-
-              
               Obx(
                 () => Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -143,8 +138,6 @@ class LoginView extends GetView<LoginController> {
                 ),
               ),
               SizedBox(height: AppResponsive.height(context, 4)),
-
-              
               ElevatedButton(
                 onPressed: () {
                   if (!controller.isLoading.value) {
