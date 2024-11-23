@@ -84,65 +84,65 @@ class LatihanView extends GetView<LatihanController> {
               ),
             ),
             SizedBox(height: AppResponsive.height(context, 4)),
-            GestureDetector(
-              onTap: () {},
-              child: Container(
-                margin: EdgeInsets.symmetric(
-                  horizontal: AppResponsive.width(context, 5),
-                ),
-                padding: const EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  color: AppColors.babyBlue,
-                  borderRadius: BorderRadius.circular(12),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
-                      blurRadius: 4,
-                      offset: const Offset(0, 2),
-                    ),
-                  ],
-                ),
-                child: Row(
-                  children: [
-                    Container(
-                      height: AppResponsive.height(context, 6),
-                      width: AppResponsive.height(context, 6),
-                      decoration: BoxDecoration(
-                        color: AppColors.blueDark,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Center(
-                        child: SvgPicture.asset(
-                          'assets/icons/ar.svg',
-                          height: AppResponsive.height(context, 3),
-                          width: AppResponsive.height(context, 3),
-                          color: AppColors.white,
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: AppResponsive.width(context, 4)),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Missing Text!!',
-                          style: AppText.largeTextMedium(
-                            color: AppColors.charcoal,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          'Lengkapi kata yang hilang',
-                          style: AppText.mediumTextRegular(
-                            color: AppColors.grey,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            // GestureDetector(
+            //   onTap: () {},
+            //   child: Container(
+            //     margin: EdgeInsets.symmetric(
+            //       horizontal: AppResponsive.width(context, 5),
+            //     ),
+            //     padding: const EdgeInsets.all(16.0),
+            //     decoration: BoxDecoration(
+            //       color: AppColors.babyBlue,
+            //       borderRadius: BorderRadius.circular(12),
+            //       boxShadow: [
+            //         BoxShadow(
+            //           color: Colors.black.withOpacity(0.1),
+            //           blurRadius: 4,
+            //           offset: const Offset(0, 2),
+            //         ),
+            //       ],
+            //     ),
+            //     child: Row(
+            //       children: [
+            //         Container(
+            //           height: AppResponsive.height(context, 6),
+            //           width: AppResponsive.height(context, 6),
+            //           decoration: BoxDecoration(
+            //             color: AppColors.blueDark,
+            //             shape: BoxShape.circle,
+            //           ),
+            //           child: Center(
+            //             child: SvgPicture.asset(
+            //               'assets/icons/ar.svg',
+            //               height: AppResponsive.height(context, 3),
+            //               width: AppResponsive.height(context, 3),
+            //               color: AppColors.white,
+            //             ),
+            //           ),
+            //         ),
+            //         SizedBox(width: AppResponsive.width(context, 4)),
+            //         Column(
+            //           crossAxisAlignment: CrossAxisAlignment.start,
+            //           children: [
+            //             Text(
+            //               'Missing Text!!',
+            //               style: AppText.largeTextMedium(
+            //                 color: AppColors.charcoal,
+            //               ),
+            //             ),
+            //             const SizedBox(height: 4),
+            //             Text(
+            //               'Lengkapi kata yang hilang',
+            //               style: AppText.mediumTextRegular(
+            //                 color: AppColors.grey,
+            //               ),
+            //             ),
+            //           ],
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),

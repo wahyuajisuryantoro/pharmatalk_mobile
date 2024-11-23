@@ -10,10 +10,8 @@ class LoginController extends GetxController {
   final passwordController = TextEditingController();
   final RxBool isPasswordHidden = true.obs;
   final RxBool isLoading = false.obs;
-
   final RxString errorMessageUsername = ''.obs;
   final RxString errorMessagePassword = ''.obs;
-
   final GetStorage storage = GetStorage();
 
   void togglePasswordVisibility() {
@@ -22,12 +20,10 @@ class LoginController extends GetxController {
 
   Future<void> loginUser() async {
     validateInputs();
-
     if (errorMessageUsername.isEmpty && errorMessagePassword.isEmpty) {
       isLoading.value = true;
       try {
         const String url = "https://pharmatalk.com.presensimu.com/api/login";
-
         final response = await http.post(
           Uri.parse(url),
           headers: {'Content-Type': 'application/json'},
@@ -44,6 +40,8 @@ class LoginController extends GetxController {
           // Simpan data user di GetStorage
           storage.write('user_data', userData);
           storage.write('token', responseData['access_token']);
+
+          // Pindah ke halaman HOME
           Get.offAllNamed(Routes.HOME);
         } else if (response.statusCode == 401) {
           errorMessagePassword.value = 'Incorrect password.';
@@ -75,7 +73,6 @@ class LoginController extends GetxController {
   void validateInputs() {
     errorMessageUsername.value = '';
     errorMessagePassword.value = '';
-
     if (usernameController.text.isEmpty) {
       errorMessageUsername.value = 'Username is required';
     }
@@ -89,5 +86,15 @@ class LoginController extends GetxController {
     usernameController.dispose();
     passwordController.dispose();
     super.onClose();
+  }
+
+  bool isLoggedIn() {
+    return storage.hasData('token') && storage.hasData('user_data');
+  }
+
+  void redirectIfLoggedIn() {
+    if (isLoggedIn()) {
+      Get.offAllNamed(Routes.HOME);
+    }
   }
 }

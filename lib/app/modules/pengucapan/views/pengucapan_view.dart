@@ -1,4 +1,5 @@
 import 'package:bahasaku/app/routes/app_pages.dart';
+import 'package:bahasaku/components/global_bottom_navbar/global_bottomnavigationbar_view.dart';
 import 'package:bahasaku/components/global_header/global_header_view.dart';
 import 'package:bahasaku/utils/app_colors.dart';
 import 'package:bahasaku/utils/app_responsive.dart';
@@ -155,6 +156,7 @@ class PengucapanView extends GetView<PengucapanController> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBarView(),
     );
   }
 }

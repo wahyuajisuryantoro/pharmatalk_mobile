@@ -62,6 +62,8 @@ class AppPages {
       name: _Paths.VISUAL,
       page: () => const VisualView(),
       binding: VisualBinding(),
+      transition: Transition.fadeIn,
+      transitionDuration: const Duration(milliseconds: 300),
     ),
     GetPage(
       name: _Paths.MATERI,
@@ -104,6 +106,7 @@ class AppPages {
       name: _Paths.MATERI_AR,
       page: () => MateriArView(),
       binding: MateriArBinding(),
+     
     ),
     GetPage(
       name: _Paths.STARTER,

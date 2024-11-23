@@ -46,6 +46,9 @@ class BottomNavigationBarController extends GetxController {
       case Routes.LATIHAN:
         selectedIndex.value = 1;
         break;
+      case Routes.VISUAL:
+        selectedIndex.value = 2;
+        break;
       case Routes.TENTANG:
         selectedIndex.value = 3;
         break;

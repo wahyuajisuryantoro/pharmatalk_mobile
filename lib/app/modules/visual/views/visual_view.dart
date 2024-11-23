@@ -84,7 +84,6 @@ class VisualView extends GetView<VisualController> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBarView(),
     );
   }
 }

@@ -65,10 +65,15 @@ class TentangView extends GetView<TentangController> {
                   ),
                   SizedBox(height: AppResponsive.height(context, 2)),
                   Image.asset(
-                    'assets/images/logo_unimma.png',
+                    'assets/images/logo_kampus.png',
                     width: AppResponsive.width(context, 50),
                     height: AppResponsive.height(context, 10),
                     fit: BoxFit.contain,
+                  ),
+                  Text(
+                    'Universitas Muhammadiyah Magelang',
+                    style: AppText.largeTextMedium(color: AppColors.charcoal),
+                    textAlign: TextAlign.center,
                   ),
                 ],
               ),
@@ -103,7 +108,8 @@ class TentangView extends GetView<TentangController> {
   List<Widget> _buildContributorCards(BuildContext context) {
     return controller.contributors.map((contributor) {
       return Padding(
-        padding: EdgeInsets.symmetric(vertical: AppResponsive.height(context, 2)),
+        padding:
+            EdgeInsets.symmetric(vertical: AppResponsive.height(context, 2)),
         child: Card(
           color: AppColors.white,
           elevation: 4,
@@ -127,21 +133,19 @@ class TentangView extends GetView<TentangController> {
                     children: [
                       Text(
                         contributor['name']!,
-                        style: AppText.largeTextMedium(color: AppColors.charcoal),
+                        style:
+                            AppText.largeTextMedium(color: AppColors.charcoal),
                       ),
                       SizedBox(height: AppResponsive.height(context, 0.5)),
                       Text(
                         contributor['profession']!,
                         style: AppText.mediumTextRegular(color: AppColors.grey),
                       ),
-                      Text(
-                        'Age: ${contributor['age']}',
-                        style: AppText.mediumTextRegular(color: AppColors.grey),
-                      ),
                       SizedBox(height: AppResponsive.height(context, 1)),
                       Text(
                         contributor['role']!,
-                        style: AppText.mediumTextMedium(color: AppColors.skyBlue),
+                        style:
+                            AppText.mediumTextMedium(color: AppColors.skyBlue),
                       ),
                     ],
                   ),
