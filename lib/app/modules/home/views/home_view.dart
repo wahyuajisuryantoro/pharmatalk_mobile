@@ -155,7 +155,7 @@ class HomeView extends StatelessWidget {
                         _buildMenuButton(
                           context,
                           iconPath: 'assets/icons/book.svg',
-                          title: 'Materi',
+                          title: 'Learning Material',
                           onTap: () {
                             Get.toNamed(Routes.MATERI);
                           },
@@ -171,7 +171,7 @@ class HomeView extends StatelessWidget {
                         _buildMenuButton(
                           context,
                           iconPath: 'assets/icons/speech.svg',
-                          title: 'Pengucapan',
+                          title: 'Speech',
                           onTap: () {
                             Get.toNamed(Routes.PENGUCAPAN);
                           },
@@ -179,7 +179,7 @@ class HomeView extends StatelessWidget {
                         _buildMenuButton(
                           context,
                           iconPath: 'assets/icons/exercise.svg',
-                          title: 'Latihan',
+                          title: 'Exercise',
                           onTap: () {
                             Get.toNamed(Routes.LATIHAN);
                           },

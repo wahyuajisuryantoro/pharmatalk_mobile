@@ -4,8 +4,12 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/latihan/bindings/latihan_binding.dart';
 import '../modules/latihan/views/latihan_view.dart';
+import '../modules/latihan_arrange_text/bindings/latihan_arrange_text_binding.dart';
+import '../modules/latihan_arrange_text/views/latihan_arrange_text_view.dart';
 import '../modules/latihan_match_text/bindings/latihan_match_text_binding.dart';
 import '../modules/latihan_match_text/views/latihan_match_text_view.dart';
+import '../modules/latihan_missing_text/bindings/latihan_missing_text_binding.dart';
+import '../modules/latihan_missing_text/views/latihan_missing_text_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/materi/bindings/materi_binding.dart';
@@ -32,6 +36,8 @@ import '../modules/tentang/bindings/tentang_binding.dart';
 import '../modules/tentang/views/tentang_view.dart';
 import '../modules/visual/bindings/visual_binding.dart';
 import '../modules/visual/views/visual_view.dart';
+import '../modules/visual_video/bindings/visual_video_binding.dart';
+import '../modules/visual_video/views/visual_video_view.dart';
 
 part 'app_routes.dart';
 
@@ -106,7 +112,6 @@ class AppPages {
       name: _Paths.MATERI_AR,
       page: () => MateriArView(),
       binding: MateriArBinding(),
-     
     ),
     GetPage(
       name: _Paths.STARTER,
@@ -129,6 +134,21 @@ class AppPages {
       name: _Paths.RIWAYAT,
       page: () => const RiwayatView(),
       binding: RiwayatBinding(),
+    ),
+    GetPage(
+      name: _Paths.LATIHAN_MISSING_TEXT,
+      page: () => const LatihanMissingTextView(),
+      binding: LatihanMissingTextBinding(),
+    ),
+    GetPage(
+      name: _Paths.LATIHAN_ARRANGE_TEXT,
+      page: () => const LatihanArrangeTextView(),
+      binding: LatihanArrangeTextBinding(),
+    ),
+    GetPage(
+      name: _Paths.VISUAL_VIDEO,
+      page: () => const VisualVideoView(),
+      binding: VisualVideoBinding(),
     ),
   ];
 }

@@ -31,7 +31,7 @@ class BottomNavigationBarView extends StatelessWidget {
                 BlendMode.srcIn,
               ),
             ),
-            label: 'Beranda',
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
@@ -43,7 +43,7 @@ class BottomNavigationBarView extends StatelessWidget {
                 BlendMode.srcIn,
               ),
             ),
-            label: 'Latihan',
+            label: 'Exercise',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
@@ -67,7 +67,7 @@ class BottomNavigationBarView extends StatelessWidget {
                 BlendMode.srcIn,
               ),
             ),
-            label: 'Tentang',
+            label: 'About',
           ),
         ],
       );

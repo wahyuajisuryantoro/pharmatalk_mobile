@@ -52,97 +52,185 @@ class LatihanView extends GetView<LatihanController> {
                         shape: BoxShape.circle,
                       ),
                       child: Center(
-                        child: SvgPicture.asset(
-                          'assets/icons/play.svg',
-                          height: AppResponsive.height(context, 3),
-                          width: AppResponsive.height(context, 3),
-                          color: AppColors.white,
+                        child: ColorFiltered(
+                          colorFilter: const ColorFilter.mode(
+                            AppColors.white,
+                            BlendMode
+                                .srcIn, // Membuat gambar menggunakan warna yang diinginkan
+                          ),
+                          child: SvgPicture.asset(
+                            'assets/icons/match.svg',
+                            height: AppResponsive.height(context, 3),
+                            width: AppResponsive.height(context, 3),
+                          ),
                         ),
                       ),
                     ),
                     SizedBox(width: AppResponsive.width(context, 4)),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Lets Match It!!!',
-                          style: AppText.largeTextMedium(
-                            color: AppColors.charcoal,
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Lets Match It!!!',
+                            style: AppText.largeTextMedium(
+                              color: AppColors.charcoal,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          'Pilih kata yang sesuai',
-                          style: AppText.mediumTextRegular(
-                            color: AppColors.grey,
+                          SizedBox(width: AppResponsive.width(context, 1)),
+                          Text(
+                            'Choose the matching word',
+                            style: AppText.mediumTextRegular(
+                              color: AppColors.grey,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ],
                 ),
               ),
             ),
             SizedBox(height: AppResponsive.height(context, 4)),
-            // GestureDetector(
-            //   onTap: () {},
-            //   child: Container(
-            //     margin: EdgeInsets.symmetric(
-            //       horizontal: AppResponsive.width(context, 5),
-            //     ),
-            //     padding: const EdgeInsets.all(16.0),
-            //     decoration: BoxDecoration(
-            //       color: AppColors.babyBlue,
-            //       borderRadius: BorderRadius.circular(12),
-            //       boxShadow: [
-            //         BoxShadow(
-            //           color: Colors.black.withOpacity(0.1),
-            //           blurRadius: 4,
-            //           offset: const Offset(0, 2),
-            //         ),
-            //       ],
-            //     ),
-            //     child: Row(
-            //       children: [
-            //         Container(
-            //           height: AppResponsive.height(context, 6),
-            //           width: AppResponsive.height(context, 6),
-            //           decoration: BoxDecoration(
-            //             color: AppColors.blueDark,
-            //             shape: BoxShape.circle,
-            //           ),
-            //           child: Center(
-            //             child: SvgPicture.asset(
-            //               'assets/icons/ar.svg',
-            //               height: AppResponsive.height(context, 3),
-            //               width: AppResponsive.height(context, 3),
-            //               color: AppColors.white,
-            //             ),
-            //           ),
-            //         ),
-            //         SizedBox(width: AppResponsive.width(context, 4)),
-            //         Column(
-            //           crossAxisAlignment: CrossAxisAlignment.start,
-            //           children: [
-            //             Text(
-            //               'Missing Text!!',
-            //               style: AppText.largeTextMedium(
-            //                 color: AppColors.charcoal,
-            //               ),
-            //             ),
-            //             const SizedBox(height: 4),
-            //             Text(
-            //               'Lengkapi kata yang hilang',
-            //               style: AppText.mediumTextRegular(
-            //                 color: AppColors.grey,
-            //               ),
-            //             ),
-            //           ],
-            //         ),
-            //       ],
-            //     ),
-            //   ),
-            // ),
+            GestureDetector(
+              onTap: () {
+                Get.toNamed(Routes.LATIHAN_MISSING_TEXT);
+              },
+              child: Container(
+                margin: EdgeInsets.symmetric(
+                  horizontal: AppResponsive.width(context, 5),
+                ),
+                padding: const EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  color: AppColors.babyBlue,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.1),
+                      blurRadius: 4,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      height: AppResponsive.height(context, 6),
+                      width: AppResponsive.height(context, 6),
+                      decoration: BoxDecoration(
+                        color: AppColors.blueDark,
+                        shape: BoxShape.circle,
+                      ),
+                       child: Center(
+                        child: ColorFiltered(
+                          colorFilter: const ColorFilter.mode(
+                            AppColors.white,
+                            BlendMode
+                                .srcIn, // Membuat gambar menggunakan warna yang diinginkan
+                          ),
+                          child: SvgPicture.asset(
+                            'assets/icons/missing.svg',
+                            height: AppResponsive.height(context, 3),
+                            width: AppResponsive.height(context, 3),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: AppResponsive.width(context, 4)),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Missing Text!!',
+                            style: AppText.largeTextMedium(
+                              color: AppColors.charcoal,
+                            ),
+                          ),
+                          SizedBox(width: AppResponsive.width(context, 1)),
+                          Text(
+                            'Complete the missing words related to pharmacy terms.',
+                            style: AppText.mediumTextRegular(
+                              color: AppColors.grey,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: AppResponsive.height(context, 4)),
+            GestureDetector(
+              onTap: () {
+                Get.toNamed(Routes.LATIHAN_ARRANGE_TEXT);
+              },
+              child: Container(
+                margin: EdgeInsets.symmetric(
+                  horizontal: AppResponsive.width(context, 5),
+                ),
+                padding: const EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  color: AppColors.babyBlue,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.1),
+                      blurRadius: 4,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      height: AppResponsive.height(context, 6),
+                      width: AppResponsive.height(context, 6),
+                      decoration: BoxDecoration(
+                        color: AppColors.blueDark,
+                        shape: BoxShape.circle,
+                      ),
+                       child: Center(
+                        child: ColorFiltered(
+                          colorFilter: const ColorFilter.mode(
+                            AppColors.white,
+                            BlendMode
+                                .srcIn, // Membuat gambar menggunakan warna yang diinginkan
+                          ),
+                          child: SvgPicture.asset(
+                            'assets/icons/arrange.svg',
+                            height: AppResponsive.height(context, 3),
+                            width: AppResponsive.height(context, 3),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: AppResponsive.width(context, 4)),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Arrangge The Text!!',
+                            style: AppText.largeTextMedium(
+                              color: AppColors.charcoal,
+                            ),
+                          ),
+                          SizedBox(width: AppResponsive.width(context, 1)),
+                          Text(
+                            'Arrange the words to form a correct sentence related to pharmacy.',
+                            style: AppText.mediumTextRegular(
+                              color: AppColors.grey,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),

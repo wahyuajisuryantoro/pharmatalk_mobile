@@ -53,7 +53,7 @@ class PengucapanView extends GetView<PengucapanController> {
                       ),
                       child: Center(
                         child: SvgPicture.asset(
-                          'assets/icons/play.svg',
+                          'assets/icons/image.svg',
                           height: AppResponsive.height(context, 3),
                           width: AppResponsive.height(context, 3),
                           color: AppColors.white,
@@ -61,23 +61,25 @@ class PengucapanView extends GetView<PengucapanController> {
                       ),
                     ),
                     SizedBox(width: AppResponsive.width(context, 4)),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Gambar dan Pengucapan',
-                          style: AppText.largeTextMedium(
-                            color: AppColors.charcoal,
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Images and Pronunciation',
+                            style: AppText.largeTextMedium(
+                              color: AppColors.charcoal,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          'Tersedia Gambar dan Aksennya',
-                          style: AppText.mediumTextRegular(
-                            color: AppColors.grey,
+                          SizedBox(height: AppResponsive.height(context, 1)),
+                          Text(
+                            'Includes images and their corresponding pronunciations.',
+                            style: AppText.mediumTextRegular(
+                              color: AppColors.grey,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -115,7 +117,7 @@ class PengucapanView extends GetView<PengucapanController> {
                       ),
                       child: Center(
                         child: SvgPicture.asset(
-                          'assets/icons/ar.svg',
+                          'assets/icons/tts.svg',
                           height: AppResponsive.height(context, 3),
                           width: AppResponsive.height(context, 3),
                           color: AppColors.white,
@@ -128,23 +130,20 @@ class PengucapanView extends GetView<PengucapanController> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Pengucapan dan Penjelasan',
+                            'Pronunciation and Explanation',
                             style: AppText.largeTextMedium(
                               color: AppColors.charcoal,
                             ),
                           ),
-                          const SizedBox(height: 4),
+                          SizedBox(height: AppResponsive.height(context, 1)),
                           Text(
-                            'Tersedia Teks Pengucapan dan Penjelasan',
+                            'Includes text for pronunciation and explanations in a pharmaceutical context.',
                             style: AppText.mediumTextRegular(
                               color: AppColors.grey,
                             ),
-                            softWrap:
-                                true, 
-                            overflow: TextOverflow
-                                .visible, 
-                            textAlign: TextAlign
-                                .start, 
+                            softWrap: true,
+                            overflow: TextOverflow.visible,
+                            textAlign: TextAlign.start,
                           ),
                         ],
                       ),
@@ -156,7 +155,6 @@ class PengucapanView extends GetView<PengucapanController> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBarView(),
     );
   }
 }

@@ -20,6 +20,9 @@ abstract class Routes {
   static const SPLASHSCREEN = _Paths.SPLASHSCREEN;
   static const TENTANG = _Paths.TENTANG;
   static const RIWAYAT = _Paths.RIWAYAT;
+  static const LATIHAN_MISSING_TEXT = _Paths.LATIHAN_MISSING_TEXT;
+  static const LATIHAN_ARRANGE_TEXT = _Paths.LATIHAN_ARRANGE_TEXT;
+  static const VISUAL_VIDEO = _Paths.VISUAL_VIDEO;
 }
 
 abstract class _Paths {
@@ -41,4 +44,7 @@ abstract class _Paths {
   static const SPLASHSCREEN = '/splashscreen';
   static const TENTANG = '/tentang';
   static const RIWAYAT = '/riwayat';
+  static const LATIHAN_MISSING_TEXT = '/latihan-missing-text';
+  static const LATIHAN_ARRANGE_TEXT = '/latihan-arrange-text';
+  static const VISUAL_VIDEO = '/visual-video';
 }

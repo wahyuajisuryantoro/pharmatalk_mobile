@@ -4,14 +4,14 @@ import 'package:bahasaku/utils/app_colors.dart';
 import 'package:bahasaku/utils/app_responsive.dart';
 import 'package:bahasaku/utils/app_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../controllers/materi_controller.dart';
 
 class MateriView extends GetView<MateriController> {
   const MateriView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,16 +23,17 @@ class MateriView extends GetView<MateriController> {
             SizedBox(height: AppResponsive.height(context, 4)),
             GestureDetector(
               onTap: () {
-                Get.toNamed(Routes.MATERI_DRUG);
+                Get.offAllNamed(Routes.MATERI_DRUG);
               },
               child: Container(
                 margin: EdgeInsets.symmetric(
                   horizontal: AppResponsive.width(context, 5),
                 ),
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(AppResponsive.height(context, 2)),
                 decoration: BoxDecoration(
                   color: AppColors.babyBlue,
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius:
+                      BorderRadius.circular(AppResponsive.height(context, 1.5)),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.1),
@@ -52,7 +53,7 @@ class MateriView extends GetView<MateriController> {
                       ),
                       child: Center(
                         child: SvgPicture.asset(
-                          'assets/icons/ar.svg',
+                          'assets/icons/drugs.svg',
                           height: AppResponsive.height(context, 3),
                           width: AppResponsive.height(context, 3),
                           color: AppColors.white,
@@ -60,23 +61,25 @@ class MateriView extends GetView<MateriController> {
                       ),
                     ),
                     SizedBox(width: AppResponsive.width(context, 4)),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Precedure In Druge Preparation',
-                          style: AppText.largeTextMedium(
-                            color: AppColors.charcoal,
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Procedure in Drug Preparation',
+                            style: AppText.largeTextMedium(
+                              color: AppColors.charcoal,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          'Menampilkan visual secara AR',
-                          style: AppText.mediumTextRegular(
-                            color: AppColors.grey,
+                          const SizedBox(height: 4),
+                          Text(
+                            'This section provides information on drug preparation procedures.',
+                            style: AppText.mediumTextRegular(
+                              color: AppColors.grey,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -85,16 +88,17 @@ class MateriView extends GetView<MateriController> {
             SizedBox(height: AppResponsive.height(context, 4)),
             GestureDetector(
               onTap: () {
-                Get.toNamed(Routes.MATERI_AR);
+                Get.offAllNamed(Routes.MATERI_AR);
               },
               child: Container(
                 margin: EdgeInsets.symmetric(
                   horizontal: AppResponsive.width(context, 5),
                 ),
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(AppResponsive.height(context, 2)),
                 decoration: BoxDecoration(
                   color: AppColors.babyBlue,
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius:
+                      BorderRadius.circular(AppResponsive.height(context, 1.5)),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.1),
@@ -122,23 +126,25 @@ class MateriView extends GetView<MateriController> {
                       ),
                     ),
                     SizedBox(width: AppResponsive.width(context, 4)),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Precedure In The Lab',
-                          style: AppText.largeTextMedium(
-                            color: AppColors.charcoal,
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Visual Laboratory AR',
+                            style: AppText.largeTextMedium(
+                              color: AppColors.charcoal,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          'Menampilkan visual secara AR',
-                          style: AppText.mediumTextRegular(
-                            color: AppColors.grey,
+                          SizedBox(height: AppResponsive.height(context, 1)),
+                          Text(
+                            'This section provides experience for showing Equipment with AR Technology',
+                            style: AppText.mediumTextRegular(
+                              color: AppColors.grey,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ],
                 ),

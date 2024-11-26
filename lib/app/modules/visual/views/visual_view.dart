@@ -21,18 +21,84 @@ class VisualView extends GetView<VisualController> {
         children: [
           GlobalHeader(),
           SizedBox(height: AppResponsive.height(context, 4)),
+          // GestureDetector(
+          //   onTap: () {
+          //     // Navigate to AR page, using Get.offAllNamed to clear previous stack
+          //     Get.offAllNamed(Routes.MATERI_AR);
+          //   },
+          //   child: Container(
+          //     margin: EdgeInsets.symmetric(
+          //       horizontal: AppResponsive.width(context, 5),
+          //     ),
+          //     padding: EdgeInsets.all(AppResponsive.height(context, 2)),
+          //     decoration: BoxDecoration(
+          //       color: AppColors.babyBlue,
+          //       borderRadius:
+          //           BorderRadius.circular(AppResponsive.height(context, 1.5)),
+          //       boxShadow: [
+          //         BoxShadow(
+          //           color: Colors.black.withOpacity(0.1),
+          //           blurRadius: 4,
+          //           offset: const Offset(0, 2),
+          //         ),
+          //       ],
+          //     ),
+          //     child: Row(
+          //       children: [
+          //         Container(
+          //           height: AppResponsive.height(context, 6),
+          //           width: AppResponsive.height(context, 6),
+          //           decoration: BoxDecoration(
+          //             color: AppColors.blueDark,
+          //             shape: BoxShape.circle,
+          //           ),
+          //           child: Center(
+          //             child: SvgPicture.asset(
+          //               'assets/icons/ar.svg',
+          //               height: AppResponsive.height(context, 3),
+          //               width: AppResponsive.height(context, 3),
+          //               color: AppColors.white,
+          //             ),
+          //           ),
+          //         ),
+          //         SizedBox(width: AppResponsive.width(context, 4)),
+          //         Column(
+          //           crossAxisAlignment: CrossAxisAlignment.start,
+          //           children: [
+          //             Text(
+          //               'Augmented Reality',
+          //               style: AppText.largeTextMedium(
+          //                 color: AppColors.charcoal,
+          //               ),
+          //             ),
+          //             const SizedBox(height: 4),
+          //             Text(
+          //               'Show visuals using AR',
+          //               style: AppText.mediumTextRegular(
+          //                 color: AppColors.grey,
+          //               ),
+          //             ),
+          //           ],
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
+          SizedBox(height: AppResponsive.height(context, 2)),
           GestureDetector(
             onTap: () {
-              Get.toNamed(Routes.MATERI_AR);
+              // Navigate to Video page, using Get.offAllNamed to ensure home is at the bottom
+              Get.offAllNamed(Routes.VISUAL_VIDEO);
             },
             child: Container(
               margin: EdgeInsets.symmetric(
                 horizontal: AppResponsive.width(context, 5),
               ),
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(AppResponsive.height(context, 2)),
               decoration: BoxDecoration(
                 color: AppColors.babyBlue,
-                borderRadius: BorderRadius.circular(12),
+                borderRadius:
+                    BorderRadius.circular(AppResponsive.height(context, 1.5)),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withOpacity(0.1),
@@ -52,7 +118,7 @@ class VisualView extends GetView<VisualController> {
                     ),
                     child: Center(
                       child: SvgPicture.asset(
-                        'assets/icons/ar.svg',
+                        'assets/icons/play.svg',
                         height: AppResponsive.height(context, 3),
                         width: AppResponsive.height(context, 3),
                         color: AppColors.white,
@@ -60,23 +126,27 @@ class VisualView extends GetView<VisualController> {
                     ),
                   ),
                   SizedBox(width: AppResponsive.width(context, 4)),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Augmented Reality',
-                        style: AppText.largeTextMedium(
-                          color: AppColors.charcoal,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Video Player',
+                          style: AppText.largeTextMedium(
+                            color: AppColors.charcoal,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        'Menampilkan visual secara AR',
-                        style: AppText.mediumTextRegular(
-                          color: AppColors.grey,
+                        SizedBox(
+                          height: AppResponsive.height(context, 1),
                         ),
-                      ),
-                    ],
+                        Text(
+                          'This section displays educational videos related to pharmacy in English',
+                          style: AppText.mediumTextRegular(
+                            color: AppColors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -84,6 +154,7 @@ class VisualView extends GetView<VisualController> {
           ),
         ],
       ),
+      bottomNavigationBar: BottomNavigationBarView(),
     );
   }
 }

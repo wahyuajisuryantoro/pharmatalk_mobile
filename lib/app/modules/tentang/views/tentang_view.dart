@@ -43,17 +43,17 @@ class TentangView extends GetView<TentangController> {
             ),
             SizedBox(height: AppResponsive.height(context, 4)),
 
-            // Contributor Section
-            Text(
-              'Team Pharmatalk',
-              style: AppText.heading2(color: AppColors.charcoal),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: AppResponsive.height(context, 2)),
-            ..._buildContributorCards(context),
+            // // Contributor Section
+            // Text(
+            //   'Team Pharmatalk',
+            //   style: AppText.heading2(color: AppColors.charcoal),
+            //   textAlign: TextAlign.center,
+            // ),
+            // SizedBox(height: AppResponsive.height(context, 2)),
+            // ..._buildContributorCards(context),
 
-            // Logo UNIMMA
-            SizedBox(height: AppResponsive.height(context, 4)),
+            // // Logo UNIMMA
+            // SizedBox(height: AppResponsive.height(context, 4)),
             Align(
               alignment: Alignment.center,
               child: Column(
@@ -80,7 +80,7 @@ class TentangView extends GetView<TentangController> {
             ),
 
             // Logout Button
-            SizedBox(height: AppResponsive.height(context, 4)),
+            SizedBox(height: AppResponsive.height(context, 20)),
             ElevatedButton(
               onPressed: () => controller.confirmLogout(context),
               style: ElevatedButton.styleFrom(
