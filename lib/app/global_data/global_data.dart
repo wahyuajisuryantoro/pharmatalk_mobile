@@ -19,4 +19,13 @@ class GlobalData {
   static void clearData() {
     storage.erase();
   }
+
+static void clearLoginData() {
+  print('Clearing login data...');
+  storage.remove('token');
+  storage.remove('user_data');
+  print('Token removed: ${storage.read('token')}');
+  print('User data removed: ${storage.read('user_data')}');
+}
+
 }

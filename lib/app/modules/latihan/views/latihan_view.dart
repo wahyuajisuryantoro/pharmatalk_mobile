@@ -56,7 +56,7 @@ class LatihanView extends GetView<LatihanController> {
                           colorFilter: const ColorFilter.mode(
                             AppColors.white,
                             BlendMode
-                                .srcIn, // Membuat gambar menggunakan warna yang diinginkan
+                                .srcIn, 
                           ),
                           child: SvgPicture.asset(
                             'assets/icons/match.svg',
@@ -117,7 +117,7 @@ class LatihanView extends GetView<LatihanController> {
                     Container(
                       height: AppResponsive.height(context, 6),
                       width: AppResponsive.height(context, 6),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: AppColors.blueDark,
                         shape: BoxShape.circle,
                       ),
@@ -126,7 +126,7 @@ class LatihanView extends GetView<LatihanController> {
                           colorFilter: const ColorFilter.mode(
                             AppColors.white,
                             BlendMode
-                                .srcIn, // Membuat gambar menggunakan warna yang diinginkan
+                                .srcIn, 
                           ),
                           child: SvgPicture.asset(
                             'assets/icons/missing.svg',
@@ -196,7 +196,7 @@ class LatihanView extends GetView<LatihanController> {
                           colorFilter: const ColorFilter.mode(
                             AppColors.white,
                             BlendMode
-                                .srcIn, // Membuat gambar menggunakan warna yang diinginkan
+                                .srcIn, 
                           ),
                           child: SvgPicture.asset(
                             'assets/icons/arrange.svg',

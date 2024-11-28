@@ -112,7 +112,7 @@ class TentangController extends GetxController {
 
   // Fungsi logout
   void logoutUser() {
-    GlobalData.clearData(); // Gunakan GlobalData untuk menghapus data
-    Get.offAllNamed(Routes.LOGIN); // Navigasi ke halaman login
+    GlobalData.clearLoginData();
+    Get.offAllNamed(Routes.LOGIN);
   }
 }
